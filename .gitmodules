@@ -1,0 +1,8 @@
+[submodule "website-frontend"]
+	path = website-frontend
+	url = git@github.com:marcosatti/website-frontend.git
+	branch = master
+[submodule "website-api"]
+	path = website-api
+	url = git@github.com:marcosatti/website-api.git
+	branch = master

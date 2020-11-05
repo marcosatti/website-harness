@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+    database:
+        image: "postgres"
+        ports: 
+            - "32780:5432"
+        environment: 
+            - "POSTGRES_PASSWORD=database"
+        volumes: 
+            - "pgdata:/var/lib/postgresql/data"
+    api:
+        image: "website-api"
+        build: "./website-api"
+        ports: 
+            - "32781:80"
+        environment: 
+            - "NODE_ENV=production"
+            - "PORT=80"
+            - "DB_HOST=database"
+            - "DB_PORT=5432"
+            - "DB_PASSWORD=database"
+            - "FRONTEND_URL=http://localhost:32782"
+    frontend:
+        image: "website-frontend"
+        build: "./website-frontend"
+        ports:
+            - "32782:80"
+        environment: 
+            - "PORT=80"
+            - "API_URL_BASE=http://localhost:32781/api/v1"
+
+volumes:
+    pgdata:
