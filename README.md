@@ -8,13 +8,14 @@ Licence: GPLv3+
 
 ## Usage
 
+You will need to create a `github.env` file (see corresponding template file) and populate the variables.
+You can also modify the environment variables as required (in `docker-compose.yml`), although the defaults should be ok.
+
 ```
 git submodule update --init
 docker-compose build
 docker-compose up
 ```
-
-Remember to modify the environment variables as required (in `docker-compose.yml`), although the defaults should be ok.
 
 ## Database Initialization
 
