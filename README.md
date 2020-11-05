@@ -2,13 +2,17 @@
 
 Development harness (Docker) for the website project.
 
+Visit https://www.marco.satti.id.au to see it live.
+
 Licence: GPLv3+
 
 ## Usage
 
+```
 git submodule update --init
 docker-compose build
 docker-compose up
+```
 
 Remember to modify the environment variables as required (in `docker-compose.yml`), although the defaults should be ok.
 
